@@ -1,0 +1,11 @@
+{
+    "language": "ቋንቋ",
+    "settings": "ማስተካከያዎች",
+    "profile": "ፕሮፋይል",
+    "login": "ግባ",
+    "changeLanguage": "ቋንቋ ቀይር",
+    "email": "ኢሜል",
+    "password": "የይለፍ ቃል",  
+    "forgotPassword": "የይለፍ ቃል ረስተዋል?",
+    "signUp": "ይመዝገቡ"
+}

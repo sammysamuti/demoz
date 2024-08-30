@@ -1,0 +1,11 @@
+{
+    "language": "Language",
+    "settings": "Settings",
+    "profile": "Profile",
+    "login": "Login",
+    "changeLanguage": "Change Language",
+    "email": "Email",
+    "password": "Password",  
+    "forgotPassword": "Forgot password?",
+    "signUp": "signUp"
+}

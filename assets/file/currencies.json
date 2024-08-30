@@ -1,0 +1,21 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": 1,
+      "name": {
+        "text_am": "የአሜሪካ ዶላር",
+        "text_en": "United States Dollar"
+      },
+      "code": "USD"
+    },
+    {
+      "id": 2,
+      "name": {
+        "text_am": "የኢትዮጵያ ብር",
+        "text_en": "Ethiopian Birr"
+      },
+      "code": "ETB"
+    }
+  ]
+}
