@@ -3,6 +3,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
+import 'package:get/get.dart';
 
 class ManagementPage extends StatelessWidget {
   static String route = 'management-page';
@@ -13,11 +14,10 @@ class ManagementPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: null, // Ensure the back arrow is removed
+        leading: null,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            // Title with responsive font size
             Expanded(
               child: Text(
                 'Management',
@@ -29,24 +29,25 @@ class ManagementPage extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed('addnewemployee-page');
+              },
               icon: Container(
-                width: 30, // Adjust the size as needed
-                height: 30, // Adjust the size as needed
+                width: 30,
+                height: 30,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   border: Border.all(
-                    color: Colors.white, // Border color
-                    width: 2, // Border width
+                    color: Colors.white,
+                    width: 2,
                   ),
                 ),
                 child: Center(
                   child: Icon(
                     Icons.add,
-                    color: Colors.white, // Icon color
-                    size: 20, // Adjust the icon size as needed
+                    color: Colors.white,
+                    size: 20,
                   ),
                 ),
               ),
@@ -134,7 +135,6 @@ class ManagementPage extends StatelessWidget {
                   DataCell(Text(index.isEven ? '2000' : '3000')),
                   DataCell(Text(index.isEven ? '5000' : '7000')),
                   DataCell(Text(index.isEven ? '5000' : '7000')),
-                  // Add more cells to match the columns
                 ],
               ),
             ),
@@ -143,7 +143,6 @@ class ManagementPage extends StatelessWidget {
       ),
     );
   }
-
 
   void _generatePDF(BuildContext context) async {
     final pdf = pw.Document();

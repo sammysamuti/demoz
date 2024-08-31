@@ -1,5 +1,6 @@
 import 'package:demoz/views/auth/login_page.dart';
 import 'package:demoz/views/auth/register_page.dart';
+import 'package:demoz/views/pages/add_employee.dart';
 import 'package:demoz/views/pages/payroll_manage_page.dart';
 import 'package:demoz/views/pages/profile_page.dart';
 import 'package:demoz/views/pages/settings_page.dart';
@@ -17,5 +18,6 @@ Map<String, WidgetBuilder> getRoutes() {
     ProfilePage.route: (context) => ProfilePage(),
     LanguagePage.route: (context) => LanguagePage(),
     SettingsPage.route: (context) => SettingsPage(),
+    AddEmployeePage.route: (context) => AddEmployeePage(),
   };
 }
