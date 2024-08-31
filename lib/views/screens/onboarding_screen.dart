@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class OnboardingScreen extends StatefulWidget {
   @override
@@ -19,15 +20,14 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     super.initState();
     _pageController = PageController(initialPage: 0);
 
-  
     _controller = AnimationController(
       duration: const Duration(seconds: 1),
       vsync: this,
     )..forward();
 
     _offsetAnimation = Tween<Offset>(
-      begin: Offset(0.0, 1.0), 
-      end: Offset(0.0, 0.0), 
+      begin: Offset(0.0, 1.0),
+      end: Offset(0.0, 0.0),
     ).animate(CurvedAnimation(
       parent: _controller,
       curve: Curves.easeInOut,
@@ -64,14 +64,17 @@ class _OnboardingScreenState extends State<OnboardingScreen>
           Expanded(
             flex: 3,
             child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'assets/images/onboarding_logo.png',
-                    height: 200,
-                  ),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.only(top: 200),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/images/onboarding_logo.png',
+                      height: 200,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -142,7 +145,9 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                             width: 135,
                             height: 56,
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.toNamed('login-page');
+                              },
                               child: Text(
                                 'Login',
                                 style: TextStyle(
