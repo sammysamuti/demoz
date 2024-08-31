@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
     bool onboardingCompleted = box.read('onboardingCompleted') ?? false;
     bool loggedIn = box.read('loggedIn') ?? false;
 
-    // Navigating to the appropriate page
+   
     if (onboardingCompleted) {
       if (loggedIn) {
         // If onboarding is completed and user is logged in, navigating to HomePage
