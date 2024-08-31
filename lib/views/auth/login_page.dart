@@ -203,19 +203,17 @@ class _LoginPageState extends State<LoginPage> {
                                         fontSize: 16,
                                       ),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Positioned(
-                                        left: 10,
-                                        top: 2,
-                                        child: Text(
-                                          'Email Address',
-                                          style: TextStyle(
-                                            color: _emailController.text.isEmpty
-                                                ? Colors.black
-                                                : Colors.blue,
-                                            fontSize: 16,
-                                          ),
+                                    Positioned(
+                                      left: 10,
+                                      top: 8,
+                                      child: Text(
+                                        'Email Address',
+                                        style: TextStyle(
+                                          color: _emailController.text.isEmpty
+                                              ? Colors.black
+                                              : Colors.blue,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w300,
                                         ),
                                       ),
                                     ),
@@ -269,21 +267,18 @@ class _LoginPageState extends State<LoginPage> {
                                         fontSize: 16,
                                       ),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Positioned(
-                                        left: 10,
-                                        top: 2,
-                                        
-                                        child: Text(
-                                          'Password',
-                                          style: TextStyle(
-                                            color:
-                                                _passwordController.text.isEmpty
-                                                    ? Colors.black
-                                                    : Colors.blue,
-                                            fontSize: 16,
-                                          ),
+                                    Positioned(
+                                      left: 10,
+                                      top: 8,
+                                      child: Text(
+                                        'Password',
+                                        style: TextStyle(
+                                          color:
+                                              _passwordController.text.isEmpty
+                                                  ? Colors.black
+                                                  : Colors.blue,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w300,
                                         ),
                                       ),
                                     ),
@@ -321,9 +316,30 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                                 SizedBox(height: 10),
                                 Center(
-                                  child: Text(
-                                    'Or continue with social account',
-                                    style: TextStyle(color: Colors.grey),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Expanded(
+                                        child: Container(
+                                          height: 1,
+                                          color: Colors.grey,
+                                        ),
+                                      ),
+                                      Container(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 10),
+                                        child: Text(
+                                          'Or continue with social account',
+                                          style: TextStyle(color: Colors.grey),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Container(
+                                          height: 1,
+                                          color: Colors.grey,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                                 SizedBox(height: 10),
