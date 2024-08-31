@@ -1,12 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class ProfilePage extends StatelessWidget {
+  final box = GetStorage();
   static String route = 'profile-page';
 
   @override
   Widget build(BuildContext context) {
+    final email = box.read('companyEmail') ?? 'xxx@gmail.com';
+    final phone = box.read('phone') ?? '+923123135';
+    final address = box.read('address') ??
+        AppLocalizations.of(context)!.addressOfTheCompany;
+    final employees = box.read('employees') ?? '20';
+    final tin = box.read('tin') ?? '123';
+    final bank = box.read('accountNumber') ??
+        AppLocalizations.of(context)!.bankAccountNumber;
+    final companyname = box.read('companyName') ??
+        AppLocalizations.of(context)!.bankAccountNumber;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -64,7 +77,7 @@ class ProfilePage extends StatelessWidget {
             ),
             SizedBox(height: 16),
             Text(
-              AppLocalizations.of(context)!.companyName,
+              companyname,
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -84,33 +97,33 @@ class ProfilePage extends StatelessWidget {
             _buildTextField(
               icon: Icons.email,
               label: AppLocalizations.of(context)!.companyEmail,
-              hint: 'xxx@gmail.com',
+              hint: email,
             ),
             SizedBox(height: 16),
             _buildTextField(
               icon: Icons.phone,
               label: AppLocalizations.of(context)!.phoneNumber,
-              hint: '+923123135',
+              hint: phone,
             ),
             SizedBox(height: 16),
             _buildTextField(
               label: AppLocalizations.of(context)!.companyAddress,
-              hint: AppLocalizations.of(context)!.addressOfTheCompany,
+              hint: address,
             ),
             SizedBox(height: 16),
             _buildTextField(
               label: AppLocalizations.of(context)!.numberOfEmployees,
-              hint: '20',
+              hint: employees,
             ),
             SizedBox(height: 16),
             _buildTextField(
               label: AppLocalizations.of(context)!.tinNumber,
-              hint: '123',
+              hint: tin,
             ),
             SizedBox(height: 16),
             _buildTextField(
               label: AppLocalizations.of(context)!.companyBank,
-              hint: AppLocalizations.of(context)!.bankAccountNumber,
+              hint: bank,
             ),
           ],
         ),

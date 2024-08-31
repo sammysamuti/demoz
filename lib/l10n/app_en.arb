@@ -105,5 +105,6 @@
     "employeeAddress": "Employee Address",
     "here": "Here you add your new employee and start calculating his tax and salary",
     "fielderror": "This field is required",
-    "changeapplanguage": "Change app language"
+    "changeapplanguage": "Change app language",
+    "logout": "Logout"
     }

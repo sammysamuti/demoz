@@ -99,7 +99,7 @@ class ManagementPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 16),
-            _buildTable(context), // Pass context here
+            _buildTable(context),
           ],
         ),
       ),
