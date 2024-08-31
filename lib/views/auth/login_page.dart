@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:demoz/core/constants.dart';
-
+import 'package:get/get.dart';
 class LoginPage extends StatefulWidget {
   static String route = 'login-page';
 
@@ -288,8 +288,7 @@ class _LoginPageState extends State<LoginPage> {
                                 ElevatedButton(
                                   onPressed: _isFormValid
                                       ? () {
-                                          Navigator.pushReplacementNamed(
-                                              context, 'next-page');
+                                           Get.toNamed('mainscreen-page');
                                         }
                                       : null,
                                   child: Center(

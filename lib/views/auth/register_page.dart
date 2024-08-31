@@ -102,7 +102,7 @@ class _RegisterCompanyPageState extends State<RegisterCompanyPage> {
                                 fontSize: 28,
                                 fontWeight: FontWeight.w500,
                                 color:
-                                    Colors.blue, // Change to your custom color
+                                    Colors.blue,
                               ),
                             ),
                           ],
@@ -143,7 +143,7 @@ class _RegisterCompanyPageState extends State<RegisterCompanyPage> {
                 onPressed: _isFormValid
                     ? () {
                         if (_formKey.currentState!.validate()) {
-                          // Handle form submission
+
                         }
                       }
                     : null,

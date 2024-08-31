@@ -162,12 +162,12 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
-                                elevation: 0, // Removes the box shadow
+                                elevation: 0, 
                               ).copyWith(
                                 side: MaterialStateProperty.all(
                                   BorderSide(
                                       color: Colors.grey[300]!,
-                                      width: 1), // Light gray border
+                                      width: 1),
                                 ),
                               ),
                             ),
@@ -196,12 +196,12 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
-                                elevation: 0, // Removes the box shadow
+                                elevation: 0, 
                               ).copyWith(
                                 side: MaterialStateProperty.all(
                                   BorderSide(
                                       color: Colors.grey[300]!,
-                                      width: 1), // Light gray border
+                                      width: 1), 
                                 ),
                               ),
                             ),
