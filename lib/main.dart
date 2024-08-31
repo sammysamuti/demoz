@@ -1,4 +1,4 @@
-import 'package:demoz/constants.dart';
+import 'package:demoz/core/constants.dart';
 import 'package:demoz/routes.dart';
 import 'package:demoz/views/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -21,29 +21,10 @@ Future<void> main() async {
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             colorScheme:
-                ColorScheme.fromSeed(seedColor: AppConstants.kcPrimary),
+                ColorScheme.fromSeed(seedColor: AppConstants.primaryColor),
             useMaterial3: true,
             fontFamily: 'Montserrat',
-            scaffoldBackgroundColor: AppConstants.kcBkg,
-          ),
-          home: Scaffold(
-            body: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.sentiment_very_dissatisfied_sharp,
-                      color: AppConstants.kcTextOne, size: 106.sp),
-                  SizedBox(height: 20.h),
-                  Text(
-                    'Sorry!',
-                    style: TextStyle(
-                      fontSize: 46.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            scaffoldBackgroundColor: Colors.white,
           ),
         );
       },
@@ -68,13 +49,13 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             colorScheme:
-                ColorScheme.fromSeed(seedColor: AppConstants.kcPrimary),
+                ColorScheme.fromSeed(seedColor: AppConstants.primaryColor),
             useMaterial3: true,
             splashFactory: NoSplash.splashFactory,
             highlightColor: Colors.transparent,
             splashColor: Colors.transparent,
-            fontFamily: 'Montserrat',
-            scaffoldBackgroundColor: AppConstants.kcBkg,
+            fontFamily: 'Lexend',
+            scaffoldBackgroundColor: Colors.white,
           ),
           locale: Locale(Get.find<LanguageController>().savedLocale),
           localizationsDelegates: const [
