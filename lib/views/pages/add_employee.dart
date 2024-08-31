@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AddEmployeePage extends StatefulWidget {
   static String route = 'addnewemployee-page';
@@ -73,7 +74,7 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
           TextButton(
             onPressed: _isFormValid ? () {} : null,
             child: Text(
-              'Add Employee',
+              AppLocalizations.of(context)!.addEmployee,
               style: TextStyle(color: Colors.black),
             ),
           ),
@@ -92,14 +93,15 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        'Add New ',
+                        AppLocalizations.of(context)!.addNew,
                         style: TextStyle(
                           fontSize: 26,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
+                      SizedBox(width: 5),
                       Text(
-                        'Employee',
+                        AppLocalizations.of(context)!.employee,
                         style: TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.w500,
@@ -110,49 +112,55 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    'Here you add your new employee and start calculating his tax and salary',
+                    AppLocalizations.of(context)!.here,
                     style: TextStyle(
                         fontSize: 14,
                         color: Colors.grey,
                         fontWeight: FontWeight.w300),
                   ),
                   SizedBox(height: 30),
-                  _buildTextField(_employeeNameController, 'Employee name'),
+                  _buildTextField(_employeeNameController,
+                      AppLocalizations.of(context)!.employeeName),
                   SizedBox(height: 16),
-                  _buildTextField(_emailAddressController, 'Email address'),
+                  _buildTextField(_emailAddressController,
+                      AppLocalizations.of(context)!.employeeAddress),
                   SizedBox(height: 16),
-                  _buildTextField(_phoneNumberController, 'Phone number'),
+                  _buildTextField(_phoneNumberController,
+                      AppLocalizations.of(context)!.phoneNumber),
                   SizedBox(height: 16),
-                  _buildTextField(_tinNumberController, 'Tin number'),
+                  _buildTextField(_tinNumberController,
+                      AppLocalizations.of(context)!.tinNumber),
                   SizedBox(height: 16),
-                  _buildTextField(_grossSalaryController, 'Gross salary'),
+                  _buildTextField(_grossSalaryController,
+                      AppLocalizations.of(context)!.grossSalary),
                   SizedBox(height: 16),
-                  _buildTextField(
-                      _taxableEarningsController, 'Taxable earnings'),
+                  _buildTextField(_taxableEarningsController,
+                      AppLocalizations.of(context)!.taxableEarnings),
                   SizedBox(height: 16),
-                  _buildTextField(
-                      _startingDateController, 'Starting date of salary'),
+                  _buildTextField(_startingDateController,
+                      AppLocalizations.of(context)!.startingDateOfSalary),
                   SizedBox(height: 30),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      _buildToggleButton('per month', _isPerMonthSelected),
+                      _buildToggleButton(AppLocalizations.of(context)!.perMonth,
+                          _isPerMonthSelected),
                       SizedBox(width: 10),
-                      _buildToggleButton('per Contract', !_isPerMonthSelected),
+                      _buildToggleButton(
+                          AppLocalizations.of(context)!.perContract,
+                          !_isPerMonthSelected),
                     ],
                   ),
                   SizedBox(height: 30),
                   ElevatedButton(
                     onPressed: _isFormValid
                         ? () {
-                            if (_formKey.currentState!.validate()) {
-                             
-                            }
+                            if (_formKey.currentState!.validate()) {}
                           }
                         : null,
                     child: Center(
                       child: Text(
-                        'Add employee',
+                        AppLocalizations.of(context)!.addEmployee,
                         style: TextStyle(fontSize: 16),
                       ),
                     ),
@@ -226,16 +234,13 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
     return Expanded(
       child: GestureDetector(
         onTap: () {
-          _toggleSelection(text == 'per month');
+          _toggleSelection(text == AppLocalizations.of(context)!.perMonth);
         },
         child: Container(
-          height: 40, 
+          height: 40,
           decoration: BoxDecoration(
-            color: isSelected
-                ? Colors.lightBlue[100]
-                : Colors.grey[200], 
-            borderRadius:
-                BorderRadius.circular(8), 
+            color: isSelected ? Colors.lightBlue[100] : Colors.grey[200],
+            borderRadius: BorderRadius.circular(8),
           ),
           child: Center(
             child: Text(

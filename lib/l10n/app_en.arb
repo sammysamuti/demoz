@@ -62,10 +62,8 @@
     "bisrate":"Bisrate",
     "girum":"Girum",
     "molla":"Molla",
-    "here":"Here",
     "add":"add",
     "your":"your",
-    "employee":"employee",
     "and":"and",
     "start":"start",
     "calculating":"calculating",
@@ -98,5 +96,14 @@
     "companyBank":"Company bank",
     "bankAccountNumber":"Bank account number",
     "submit":"Submit",
-    "approval":"approval"
+    "approval":"approval",
+    "addNewEmployee":"Add New Employee",
+    "addEmployee":"Add Employee",
+    "netSalary": "Net Salary",
+    "employeesPerformance": "Employee Performance",
+    "addNew": "Add New",
+    "employeeAddress": "Employee Address",
+    "here": "Here you add your new employee and start calculating his tax and salary",
+    "fielderror": "This field is required",
+    "changeapplanguage": "Change app language"
     }
