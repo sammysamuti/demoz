@@ -162,6 +162,13 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
+                                elevation: 0, // Removes the box shadow
+                              ).copyWith(
+                                side: MaterialStateProperty.all(
+                                  BorderSide(
+                                      color: Colors.grey[300]!,
+                                      width: 1), // Light gray border
+                                ),
                               ),
                             ),
                           ),
@@ -172,7 +179,9 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                             width: 135,
                             height: 56,
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.toNamed('signup-page');
+                              },
                               child: Text(
                                 'Sign up',
                                 style: TextStyle(
@@ -186,6 +195,13 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                                 foregroundColor: Colors.black,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
+                                ),
+                                elevation: 0, // Removes the box shadow
+                              ).copyWith(
+                                side: MaterialStateProperty.all(
+                                  BorderSide(
+                                      color: Colors.grey[300]!,
+                                      width: 1), // Light gray border
                                 ),
                               ),
                             ),
