@@ -4,6 +4,7 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 import 'package:get/get.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ManagementPage extends StatelessWidget {
   static String route = 'management-page';
@@ -20,7 +21,7 @@ class ManagementPage extends StatelessWidget {
           children: [
             Expanded(
               child: Text(
-                'Management',
+                AppLocalizations.of(context)!.management,
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: MediaQuery.of(context).size.width > 600 ? 24 : 20,
@@ -52,7 +53,7 @@ class ManagementPage extends StatelessWidget {
                 ),
               ),
               label: Text(
-                'Add Employee',
+                AppLocalizations.of(context)!.addNewEmployee,
                 style: TextStyle(color: Colors.white),
               ),
               style: ElevatedButton.styleFrom(
@@ -90,7 +91,7 @@ class ManagementPage extends StatelessWidget {
               },
               icon: Icon(Icons.upload_file, color: Colors.grey),
               label: Text(
-                'Upload CSV',
+                '${AppLocalizations.of(context)!.upload}, CSV',
                 style: TextStyle(
                   color: Colors.grey,
                   fontWeight: FontWeight.bold,
@@ -98,14 +99,14 @@ class ManagementPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 16),
-            _buildTable(),
+            _buildTable(context), // Pass context here
           ],
         ),
       ),
     );
   }
 
-  Widget _buildTable() {
+  Widget _buildTable(BuildContext context) {
     return Expanded(
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
@@ -113,11 +114,31 @@ class ManagementPage extends StatelessWidget {
           child: DataTable(
             columnSpacing: 24.0,
             columns: [
-              DataColumn(label: Text('Employees')),
-              DataColumn(label: Text('Net Salary')),
-              DataColumn(label: Text('Taxable Earnings')),
-              DataColumn(label: Text('Income Tax')),
-              DataColumn(label: Text('Pension Tax')),
+              DataColumn(
+                label: Text(
+                  AppLocalizations.of(context)!.employees,
+                ),
+              ),
+              DataColumn(
+                label: Text(
+                  AppLocalizations.of(context)!.netSalary,
+                ),
+              ),
+              DataColumn(
+                label: Text(
+                  AppLocalizations.of(context)!.taxableEarnings,
+                ),
+              ),
+              DataColumn(
+                label: Text(
+                  '${AppLocalizations.of(context)!.income} ${AppLocalizations.of(context)!.tax}',
+                ),
+              ),
+              DataColumn(
+                label: Text(
+                  '${AppLocalizations.of(context)!.pension} ${AppLocalizations.of(context)!.tax}',
+                ),
+              ),
             ],
             rows: List<DataRow>.generate(
               6,
@@ -145,6 +166,14 @@ class ManagementPage extends StatelessWidget {
   }
 
   void _generatePDF(BuildContext context) async {
+    final employees = AppLocalizations.of(context)!.employees;
+    final netSalary = AppLocalizations.of(context)!.netSalary;
+    final taxableEarnings = AppLocalizations.of(context)!.taxableEarnings;
+    final incomeTax =
+        '${AppLocalizations.of(context)!.income} ${AppLocalizations.of(context)!.tax}';
+    final pensionTax =
+        '${AppLocalizations.of(context)!.pension} ${AppLocalizations.of(context)!.tax}';
+
     final pdf = pw.Document();
 
     pdf.addPage(
@@ -153,11 +182,11 @@ class ManagementPage extends StatelessWidget {
           return pw.Table.fromTextArray(
             data: <List<String>>[
               <String>[
-                'Employees',
-                'Net Salary',
-                'Taxable Earnings',
-                'Income Tax',
-                'Pension Tax'
+                employees,
+                netSalary,
+                taxableEarnings,
+                incomeTax,
+                pensionTax,
               ],
               ...List.generate(
                   6,

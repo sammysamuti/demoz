@@ -28,7 +28,7 @@
     "paid": "ተከፍሏል",
     "due": "ቀን ደርሶ ታይቷል",
     "add": "አክል",
-    "upload": "ስቀል",
+    "upload": "አስገባ",
     "calculating": "መሄድ",
     "number": "ቁጥር",
     "employees": "ሰራተኞች",
@@ -63,7 +63,6 @@
     "bisrate": "ብስራተ",
     "girum": "ግሩም",
     "molla": "ሞላ",
-    "here": "እዚህ",
     "add": "አክል",
     "your": "የእርስዎ",
     "employee": "ሰራተኛ",
@@ -95,5 +94,14 @@
     "companyBank": "የኩባንያ ባንክ",
     "bankAccountNumber": "የባንክ አካውንት ቁጥር",
     "submit": "አስገባ",
-    "approval": "ማጽደቅ"
+    "approval": "ማጽደቅ",
+    "addNewEmployee": "አዲስ ሰራተኛ አክል",
+    "addEmployee": "ሰራተኛ አክል",
+    "netSalary": "የተጣራ ደመወዝ",
+    "employeesPerformance": "የሰራተኛ ሥራ አፈፃፀም",
+    "addNew": "አዲስ ጨምር",
+    "employeeAddress": "የሰራተኛ አድራሻ",
+    "here": "እዚህ አዲስ ሰራተኛዎን ያክሉ እና ግብር እና ደመወዝውን ስለምርምር ይጀምሩ።",
+    "fielderror": "ይህን መሙላት አስፈላጊ ነው",
+    "changeapplanguage": "የአፕሊኬሽን ቋንቋን ይለውጡ"
 }

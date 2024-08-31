@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
+
 class ProfilePage extends StatelessWidget {
   static String route = 'profile-page';
 
@@ -8,10 +9,13 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-     backgroundColor: Colors.white,
+        backgroundColor: Colors.white,
         title: Text(
-          AppLocalizations.of(context)!.companyName,
-          style: TextStyle(color: Colors.black),
+          AppLocalizations.of(context)!.companyProfile,
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         actions: [
           IconButton(
@@ -21,7 +25,7 @@ class ProfilePage extends StatelessWidget {
               child: Image.asset('assets/images/settings.png'),
             ),
             onPressed: () {
-               Get.toNamed('setting-page');
+              Get.toNamed('setting-page');
             },
           ),
         ],
@@ -79,34 +83,34 @@ class ProfilePage extends StatelessWidget {
             SizedBox(height: 16),
             _buildTextField(
               icon: Icons.email,
-              label: 'Company Email',
+              label: AppLocalizations.of(context)!.companyEmail,
               hint: 'xxx@gmail.com',
             ),
             SizedBox(height: 16),
             _buildTextField(
               icon: Icons.phone,
-              label: 'Phone Number',
+              label: AppLocalizations.of(context)!.phoneNumber,
               hint: '+923123135',
             ),
             SizedBox(height: 16),
             _buildTextField(
-              label: 'Company Address',
-              hint: 'Somewhere',
+              label: AppLocalizations.of(context)!.companyAddress,
+              hint: AppLocalizations.of(context)!.addressOfTheCompany,
             ),
             SizedBox(height: 16),
             _buildTextField(
-              label: 'Number of Employees',
+              label: AppLocalizations.of(context)!.numberOfEmployees,
               hint: '20',
             ),
             SizedBox(height: 16),
             _buildTextField(
-              label: 'TIN Number',
+              label: AppLocalizations.of(context)!.tinNumber,
               hint: '123',
             ),
             SizedBox(height: 16),
             _buildTextField(
-              label: 'Company Bank',
-              hint: 'Dashen Bank',
+              label: AppLocalizations.of(context)!.companyBank,
+              hint: AppLocalizations.of(context)!.bankAccountNumber,
             ),
           ],
         ),

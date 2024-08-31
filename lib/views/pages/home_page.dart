@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -19,7 +20,9 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         title: Text(
           AppLocalizations.of(context)!.home,
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         actions: [
           IconButton(
@@ -29,7 +32,7 @@ class _HomePageState extends State<HomePage> {
               child: Image.asset('assets/images/settings.png'),
             ),
             onPressed: () {
-               Get.toNamed('setting-page');
+              Get.toNamed('setting-page');
             },
           ),
         ],
@@ -45,7 +48,8 @@ class _HomePageState extends State<HomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  buildInfoCard('Number of Employees', '20', Colors.blue),
+                  buildInfoCard(AppLocalizations.of(context)!.numberOfEmployees,
+                      '20', Colors.blue),
                   SizedBox(width: 5),
                   buildInfoCard('Income Tax paid', '2000', Colors.green),
                 ],
@@ -54,9 +58,15 @@ class _HomePageState extends State<HomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  buildInfoCard('Pension Tax Paid', '4', Colors.cyan),
+                  buildInfoCard(
+                      '${AppLocalizations.of(context)!.pension} ${AppLocalizations.of(context)!.tax} ${AppLocalizations.of(context)!.paid}',
+                      '4',
+                      Colors.cyan),
                   SizedBox(width: 16),
-                  buildInfoCard('Employees Performance', '95 %', Colors.red),
+                  buildInfoCard(
+                      AppLocalizations.of(context)!.employeesPerformance,
+                      '95 %',
+                      Colors.red),
                 ],
               ),
               SizedBox(height: 16),
@@ -68,8 +78,10 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    buildToggleButton('Upcoming', isUpcomingSelected),
-                    buildToggleButton('Past', !isUpcomingSelected),
+                    buildToggleButton(AppLocalizations.of(context)!.upcoming,
+                        isUpcomingSelected),
+                    buildToggleButton(AppLocalizations.of(context)!.past,
+                        !isUpcomingSelected),
                   ],
                 ),
               ),
@@ -86,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Date',
+                        AppLocalizations.of(context)!.date,
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.w300,
@@ -131,7 +143,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                               onPressed: () {},
                               child: Text(
-                                'Pay Now',
+                                '${AppLocalizations.of(context)!.pay} ${AppLocalizations.of(context)!.now}',
                                 style: TextStyle(
                                   color: Color(0xFFFF7F74),
                                 ),
@@ -154,7 +166,7 @@ class _HomePageState extends State<HomePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Income Tax',
+                                  '${AppLocalizations.of(context)!.income} ${AppLocalizations.of(context)!.tax}',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w300,
                                     fontSize: 12,
@@ -176,7 +188,7 @@ class _HomePageState extends State<HomePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Pension Tax',
+                                  '${AppLocalizations.of(context)!.pension} ${AppLocalizations.of(context)!.tax}',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w300,
                                     fontSize: 12,
@@ -220,7 +232,10 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   buildPieChartCard(),
                   SizedBox(width: 16),
-                  buildSummaryCard('Tax summery', '9,349.85 etb', '49.98%'),
+                  buildSummaryCard(
+                      '${AppLocalizations.of(context)!.tax} ${AppLocalizations.of(context)!.summery}',
+                      '9,349.85 etb',
+                      '49.98%'),
                 ],
               ),
             ],
@@ -270,7 +285,7 @@ class _HomePageState extends State<HomePage> {
       child: GestureDetector(
         onTap: () {
           setState(() {
-            isUpcomingSelected = title == 'Upcoming';
+            isUpcomingSelected = title == AppLocalizations.of(context)!.upcoming;
           });
         },
         child: Container(
@@ -337,7 +352,7 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Employee Composition',
+                      '${AppLocalizations.of(context)!.employee} ${AppLocalizations.of(context)!.composition}',
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -364,7 +379,7 @@ class _HomePageState extends State<HomePage> {
                               PieChartSectionData(
                                 color: Color(0xFF5932EA),
                                 value: 65,
-                                radius: 40,
+                                radius: 33,
                                 titleStyle: TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.bold,
@@ -381,7 +396,7 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(height: 6),
                     Center(
                       child: Text(
-                        '856 employee total',
+                        '856 ${AppLocalizations.of(context)!.employee} ${AppLocalizations.of(context)!.total}',
                         style: TextStyle(
                           color: Colors.grey,
                           fontSize: 10,
@@ -423,7 +438,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Positioned(
                   right: 0,
-                  bottom: 15,
+                  bottom: 40,
                   child: Container(
                     padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
