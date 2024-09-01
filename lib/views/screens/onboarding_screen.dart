@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class OnboardingScreen extends StatefulWidget {
   @override
@@ -9,6 +10,7 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State<OnboardingScreen>
     with SingleTickerProviderStateMixin {
+  final box = GetStorage();
   late PageController _pageController;
   Timer? _autoSlideTimer;
   int _currentIndex = 0;
@@ -147,6 +149,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                             child: ElevatedButton(
                               onPressed: () {
                                 Get.toNamed('login-page');
+                                box.write('onboardingCompleted', true);
                               },
                               child: Text(
                                 'Login',
@@ -162,12 +165,11 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
-                                elevation: 0, 
+                                elevation: 0,
                               ).copyWith(
                                 side: MaterialStateProperty.all(
                                   BorderSide(
-                                      color: Colors.grey[300]!,
-                                      width: 1),
+                                      color: Colors.grey[300]!, width: 1),
                                 ),
                               ),
                             ),
@@ -181,6 +183,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                             child: ElevatedButton(
                               onPressed: () {
                                 Get.toNamed('signup-page');
+                                box.write('onboardingCompleted', true);
                               },
                               child: Text(
                                 'Sign up',
@@ -196,12 +199,11 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
-                                elevation: 0, 
+                                elevation: 0,
                               ).copyWith(
                                 side: MaterialStateProperty.all(
                                   BorderSide(
-                                      color: Colors.grey[300]!,
-                                      width: 1), 
+                                      color: Colors.grey[300]!, width: 1),
                                 ),
                               ),
                             ),

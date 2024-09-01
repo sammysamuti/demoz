@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:get/get.dart'; 
 
 class RegisterCompanyPage extends StatefulWidget {
   static String route = 'signup-page';
@@ -8,6 +10,7 @@ class RegisterCompanyPage extends StatefulWidget {
 
 class _RegisterCompanyPageState extends State<RegisterCompanyPage> {
   final _formKey = GlobalKey<FormState>();
+  final GetStorage _storage = GetStorage();
 
   final TextEditingController _companyNameController = TextEditingController();
   final TextEditingController _addressController = TextEditingController();
@@ -58,6 +61,20 @@ class _RegisterCompanyPageState extends State<RegisterCompanyPage> {
     return _formKey.currentState?.validate() ?? false;
   }
 
+  void _handleSubmit() {
+    if (_formKey.currentState!.validate()) {
+      _storage.write('companyName', _companyNameController.text);
+      _storage.write('address', _addressController.text);
+      _storage.write('phone', _phoneController.text);
+      _storage.write('tin', _tinController.text);
+      _storage.write('employees', _employeesController.text);
+      _storage.write('bank', _bankController.text);
+      _storage.write('accountNumber', _accountNumberController.text);
+
+      Get.toNamed('mainscreen-page');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,8 +118,7 @@ class _RegisterCompanyPageState extends State<RegisterCompanyPage> {
                               style: TextStyle(
                                 fontSize: 28,
                                 fontWeight: FontWeight.w500,
-                                color:
-                                    Colors.blue,
+                                color: Colors.blue,
                               ),
                             ),
                           ],
@@ -140,13 +156,7 @@ class _RegisterCompanyPageState extends State<RegisterCompanyPage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: ElevatedButton(
-                onPressed: _isFormValid
-                    ? () {
-                        if (_formKey.currentState!.validate()) {
-
-                        }
-                      }
-                    : null,
+                onPressed: _isFormValid ? _handleSubmit : null,
                 child: Center(
                   child: Text(
                     'Submit for approval',

@@ -103,5 +103,6 @@
     "employeeAddress": "የሰራተኛ አድራሻ",
     "here": "እዚህ አዲስ ሰራተኛዎን ያክሉ እና ግብር እና ደመወዝውን ስለምርምር ይጀምሩ።",
     "fielderror": "ይህን መሙላት አስፈላጊ ነው",
-    "changeapplanguage": "የአፕሊኬሽን ቋንቋን ይለውጡ"
+    "changeapplanguage": "የአፕሊኬሽን ቋንቋን ይለውጡ",
+    "logout": "ውጣ"
 }

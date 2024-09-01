@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:demoz/core/constants.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+
 class LoginPage extends StatefulWidget {
   static String route = 'login-page';
 
@@ -9,6 +11,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final GetStorage _storage = GetStorage();
   bool _obscurePassword = true;
   final _formKey = GlobalKey<FormState>();
   bool _emailTouched = false;
@@ -85,6 +88,15 @@ class _LoginPageState extends State<LoginPage> {
         _passwordError == null &&
         _emailController.text.isNotEmpty &&
         _passwordController.text.isNotEmpty;
+  }
+
+  void _signUp() {
+    if (_isFormValid) {
+      _storage.write('email', _emailController.text);
+      _storage.write('password', _passwordController.text);
+       _storage.write('loggedIn', true);
+       Get.toNamed('mainscreen-page');
+    }
   }
 
   @override
@@ -288,7 +300,7 @@ class _LoginPageState extends State<LoginPage> {
                                 ElevatedButton(
                                   onPressed: _isFormValid
                                       ? () {
-                                           Get.toNamed('mainscreen-page');
+                                          _signUp();
                                         }
                                       : null,
                                   child: Center(
