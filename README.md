@@ -1,16 +1,22 @@
-# demoz
 
-A new Flutter project.
+# Demoz Mobile App
 
-## Getting Started
+So I built Demoz Mobile App, which follows the MVC (Model-View-Controller) design pattern to keep things organized and efficient. The app is designed to be friendly and accessible, with support for two languages to cater to a diverse audience.
 
-This project is a starting point for a Flutter application.
+## External Libraries,
 
-A few resources to get you started if this is your first Flutter project:
+- GetX : This was my go-to for state management, routing, and dependency injection. 
+- get_storage : I used this to store datas in local storage.
+- flutter_localization: I used this to change languages with built-in localization support.
+- file_picker: I used this to allow users select files directly from their devices.
+- page_transition: I used this to create smooth transitions between screens to keep user experience.
+- flutter_screenutil: I used this so that the app’s UI to different screen sizes so everything looks great on any device.
+- fl_chart: I used it to create customizable charts for displaying data.
+- flutter_launcher_icons: I used this to update the app’s icon to match its style.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Multilingual Support
+ - Engish
+ - Amharic
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
