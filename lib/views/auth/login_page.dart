@@ -94,8 +94,8 @@ class _LoginPageState extends State<LoginPage> {
     if (_isFormValid) {
       _storage.write('email', _emailController.text);
       _storage.write('password', _passwordController.text);
-       _storage.write('loggedIn', true);
-       Get.toNamed('mainscreen-page');
+      _storage.write('loggedIn', true);
+      Get.toNamed('mainscreen-page');
     }
   }
 
